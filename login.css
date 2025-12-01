@@ -1,0 +1,256 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    padding-top: 30px; 
+}
+
+
+.navbar {
+    margin-top: 30px;
+    padding: 15px 0;
+    position: relative;
+    min-height: 80px;
+}
+
+.navbar.bg-white {
+    position: relative;
+    z-index: 1031;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 80px;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1032;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand .logo {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav {
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar-nav .nav-item {
+    margin-top: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+
+/* Fix para o ícone de pesquisa na página de login - mesma especificidade da home */
+.navbar .nav-link.search-toggle .search-toggle-icon,
+.navbar .search-toggle-icon,
+.navbar-nav .nav-link .search-toggle-icon,
+button.nav-link.search-toggle .search-toggle-icon,
+button.search-toggle .search-toggle-icon {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+}
+
+.navbar .twitter-search .search-field svg,
+.navbar .twitter-search .search-field .search {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+}
+
+.navbar-nav .nav-link {
+    padding: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+
+.secondary-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px; 
+}
+.secondary-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+
+.fixed-top-bar {
+    background-color: #69110c;
+    color: white;
+    padding: 3px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fixed-top-bar .left-side,
+.fixed-top-bar .right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.fixed-top-bar .social-icons {
+    display: flex;
+    gap: 10px;
+}
+.fixed-top-bar .social-icons a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.main-content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 50px;
+    padding: 20px;
+    justify-content: center;
+    position: relative;
+}
+
+.text-content {
+    width: 300px;
+    padding: 20px;
+    margin-left: 100px; 
+    margin-top: 0px;   
+}
+
+.register-container {
+    width: 500px;
+    margin-top:20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: darkred;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px; 
+    margin-top: 100px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 5px; 
+}
+
+.footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+}
+
+.payment-icons {
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    margin-right: 10px;
+    width: 24px;
+}
+
+.subscribe-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px; 
+    margin-right: 0; 
+}
+
+.subscribe-section input[type="email"],
+.subscribe-section input[type="text"],
+.subscribe-section button {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.subscribe-section button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.message-container {
+    display: none !important;
+}

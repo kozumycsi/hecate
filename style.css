@@ -1,0 +1,846 @@
+/* Estilos gerais responsivos */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar responsivo */
+.navbar {
+    margin-top: 30px;
+    padding: 15px 0;
+    position: relative;
+    min-height: 80px;
+}
+
+.navbar.bg-white {
+    position: relative;
+    z-index: 1031;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 80px;
+}
+
+.logo {
+    width: 80px; 
+    height: auto; 
+    border-radius: 5px; 
+    transition: transform 0.3s;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.logo:hover {
+    transform: scale(1.05); 
+}
+
+.fixed-top-bar {
+    background-color: #69110c;
+    color: white;
+    padding: 3px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 15px;
+}
+
+.fixed-top-bar .left-side {
+    display: flex;
+    align-items: center;
+}
+
+.fixed-top-bar .right-side {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.fixed-top-bar .social-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.fixed-top-bar .social-icons a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1032;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 8px;
+}
+
+.search-nav-item {
+    position: relative;
+    margin-right: 12px;
+}
+
+.search-nav-item .nav-search-form {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1050;
+}
+
+.search-nav-item.active .nav-search-form {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.twitter-search {
+    --input-text-color: #fff;
+    --input-bg-color: #283542;
+    --focus-input-bg-color: #1f2a36;
+    --text-color: #949faa;
+    --active-color: #1b9bee;
+    --width-of-input: 280px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+    font-size: 0.9rem;
+    display: flex;
+    width: var(--width-of-input);
+}
+
+.twitter-search .search-field {
+    position: relative;
+    width: 100%;
+    isolation: isolate;
+}
+
+.twitter-search .fancy-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.twitter-search .search-field {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+}
+
+.twitter-search .search-field svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.twitter-search .search-field .search {
+    position: absolute;
+    left: var(--inline-padding-of-input);
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--text-color);
+}
+
+.twitter-search .input {
+    color: var(--input-text-color);
+    -webkit-text-fill-color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em, calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+    padding: 0.4rem 0;
+    caret-color: var(--active-color);
+}
+
+.twitter-search .input:focus {
+    outline: none;
+}
+
+.twitter-search .input::placeholder {
+    color: var(--text-color);
+}
+
+.twitter-search .search-field:focus-within .fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+}
+
+.twitter-search .search-field:focus-within .search {
+    fill: var(--active-color);
+}
+
+.twitter-search .close-btn {
+    position: absolute;
+    right: var(--inline-padding-of-input);
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0.1em;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.twitter-search .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.twitter-search .close-btn svg {
+    width: 12px;
+}
+
+.twitter-search .close-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(27, 155, 238, 0.4);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.navbar-nav .nav-item {
+    margin-top: 0;
+}
+
+.navbar-nav .nav-link {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+
+.twitter-search input:-webkit-autofill,
+.twitter-search input:-webkit-autofill:hover,
+.twitter-search input:-webkit-autofill:focus,
+.twitter-search input:-webkit-autofill:active {
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+    -webkit-transition-delay: 9999s;
+}
+
+.search-toggle {
+    border: none;
+    background: none;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    color: #363636;
+    cursor: pointer;
+}
+
+.search-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(27, 155, 238, 0.4);
+    border-radius: 50%;
+}
+
+.search-toggle-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.search-page-form {
+    display: flex;
+    width: 100%;
+    max-width: 420px;
+}
+
+.search-page-form input {
+    flex: 1;
+}
+
+.search-page-form button {
+    white-space: nowrap;
+}
+
+.banner-carousel-wrapper {
+    margin-top: -60px;
+    margin-bottom: 0;
+}
+
+.banner-carousel-img {
+    height: 60vh;
+    min-height: 360px;
+    object-fit: cover;
+}
+
+.banner-carousel .carousel-indicators li {
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+.banner-carousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+.banner-carousel .carousel-control-prev-icon,
+.banner-carousel .carousel-control-next-icon {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+}
+
+.secondary-nav {
+    padding: 0.2rem 0;
+    height: 40px;
+    position: relative;
+    z-index: 1029;
+    top: -40px
+}
+
+.secondary-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.card {
+    border: none;
+    height: 100%; /* Garante que todos os cards na mesma linha tenham a mesma altura */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* A regra .col-md-2 foi removida para permitir que o Bootstrap controle a responsividade da grade. */
+.card {
+    margin: 0 10px;
+}
+
+.btn-primary {
+    background-color:darkred;
+    border-color:darkred;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 0 10px;
+    overflow: hidden;
+    flex-wrap: nowrap; /* Impede quebra de linha em desktop */
+}
+
+/* Cada banner ocupa exatamente 1/5 da tela */
+.banner-full-width {
+    flex: 1;
+    max-width: calc(20% - 10px);
+    aspect-ratio: 3 / 5; /* Mantém o mesmo formato alto e estreito */
+    border: 6px solid #5a0000;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    background-size: contain; /* NÃO CORTA NUNCA */
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box; /* Inclui border no cálculo */
+}
+
+/* Ajustes para notebook com zoom 80% */
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .banner-container {
+        gap: 8px;
+        padding: 0 8px;
+    }
+    
+    .banner-full-width {
+        max-width: calc(20% - 8px);
+    }
+}
+
+/* Ajustes para telas menores (netbook) */
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+    .banner-container {
+        gap: 6px;
+        padding: 0 6px;
+    }
+    
+    .banner-full-width {
+        max-width: calc(20% - 6px);
+        border-width: 4px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1280px) {
+    .banner-container {
+        gap: 5px;
+        padding: 0 5px;
+    }
+    
+    .banner-full-width {
+        max-width: calc(20% - 5px);
+        border-width: 4px;
+    }
+}
+
+/* Mobile – transforma em carrossel horizontal/rolável */
+@media screen and (max-width: 768px) {
+    .banner-container {
+        overflow-x: auto;
+        gap: 15px;
+        padding: 0 15px;
+        justify-content: flex-start; /* Alinha à esquerda para scroll */
+    }
+
+    .banner-full-width {
+        min-width: 60%;
+        max-width: 60%;
+        aspect-ratio: 3/5;
+        flex: 0 0 60%; /* Não estica, mantém tamanho fixo */
+    }
+}
+
+.last-banner-container {
+    width: 100%;
+    height: 100%; /* Faz o contêiner ocupar toda a altura da coluna */
+}
+
+.last-banner-img {
+    width: 100%;
+    height: 100%; /* Faz a imagem ocupar toda a altura do contêiner */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço, mantendo a proporção (pode cortar) */
+    display: block;
+}
+
+/* Botões de tamanho nos cards de produto - estilo uniforme como na segunda imagem */
+.btn-custom,
+.btn.btn-sm.btn-secondary.btn-custom,
+button.btn.btn-sm.btn-secondary.btn-custom {
+    background-color: white !important; /* Branco como na segunda imagem */
+    color: black !important; /* Texto preto */
+    border: 1px solid black !important; /* Borda preta */
+    border-radius: 3px !important;
+    padding: 3px 10px !important; /* Padding fixo para todos terem o mesmo tamanho */
+    font-size: 11px !important; /* Fonte menor */
+    font-weight: normal !important;
+    margin: 0 !important;
+    width: 35px !important; /* Largura fixa para todos terem o mesmo tamanho */
+    min-width: 35px !important;
+    max-width: 35px !important;
+    height: 24px !important; /* Altura fixa */
+    line-height: 18px !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important; /* Não estica */
+    box-sizing: border-box !important;
+    vertical-align: top !important; /* Alinha todos no topo */
+}
+
+/* Container de tamanhos nos cards de produto */
+.card-body .mb-2:has(.btn-custom),
+.card-body .mb-2:has(button.btn-custom) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px !important; /* Espaçamento menor */
+    justify-content: flex-start !important; /* Alinha à esquerda por padrão */
+    align-items: flex-start !important; /* Alinha no topo */
+}
+
+/* Quando há apenas um botão, centraliza */
+.card-body .mb-2:has(.btn-custom:only-child),
+.card-body .mb-2:has(button.btn-custom:only-child),
+.card-body .mb-2:has(.btn-custom):has(:nth-child(1):nth-last-child(1)),
+.card-body .mb-2:has(button.btn-custom):has(:nth-child(1):nth-last-child(1)) {
+    justify-content: center !important; /* Centraliza quando há apenas um */
+}
+
+/* Quando há apenas 2 botões na última linha (quebra de linha), centraliza a última linha */
+.card-body .mb-2:has(.btn-custom) {
+    align-content: flex-start;
+}
+
+.card-body .mb-2:has(.btn-custom) .btn-custom,
+.card-body .mb-2:has(button.btn-custom) button.btn-custom {
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+    width: 35px !important; /* Garante largura fixa mesmo quando centralizado */
+    min-width: 35px !important;
+    max-width: 35px !important;
+}
+
+/* Centraliza quando há apenas um botão usando nth-child */
+.card-body .mb-2:has(.btn-custom):not(:has(.btn-custom ~ .btn-custom)),
+.card-body .mb-2:has(button.btn-custom):not(:has(button.btn-custom ~ button.btn-custom)) {
+    justify-content: center !important;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: nowrap;
+    gap: 5px; 
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px; 
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 5px; 
+}
+
+.footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+}
+
+.payment-icons {
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    margin-right: 10px;
+    width: 24px;
+}
+
+.subscribe-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* Torna a seção de inscrição flexível */
+    max-width: 450px; /* Define uma largura máxima */
+    margin-right: 0; 
+}
+
+.subscribe-section input[type="email"],
+.subscribe-section input[type="text"],
+.subscribe-section button {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.subscribe-section button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Media Queries para Responsividade */
+
+/* Para tablets e telas menores (até 992px) */
+@media (max-width: 992px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-column {
+        margin-bottom: 20px;
+    }
+    
+    .subscribe-section {
+        align-items: center;
+    }
+
+    .row.no-gutters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .col-md-2 {
+        flex: 0 0 50%; /* 2 colunas por linha */
+        max-width: 50%;
+    }
+}
+
+/* Para celulares (até 768px) */
+@media (max-width: 768px) {
+    .fixed-top-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .fixed-top-bar .right-side {
+        margin-top: 10px;
+    }
+
+    .navbar-brand {
+        position: static;
+        transform: none;
+    }
+
+    .secondary-nav {
+        top: 0;
+    }
+
+    .col-md-2 {
+        flex: 0 0 100%; /* 1 coluna por linha */
+        max-width: 100%;
+    }
+
+    .banner-container {
+        height: auto;
+    }
+
+    .banner-container {
+        flex-wrap: wrap; /* Permite quebra de linha em mobile */
+        gap: 8px;
+    }
+    
+    .banner-full-width {
+        flex: 0 0 calc(50% - 4px); /* 2 banners por linha em mobile */
+        height: 90px;
+        min-width: 90px;
+        max-width: none; /* Remove limite máximo em mobile */
+    }
+}
+
+.message-container {
+    position: absolute; /* Torna a mensagem flutuante */
+    top:24%; /* Ajusta a altura relativa */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+    background-color: #f8d7da; /* Cor de fundo vermelha clara */
+    color: #721c24; /* Cor do texto vermelha escura */
+    padding: 15px; /* Espaçamento interno */
+    border: 1px solid #f5c6cb; /* Borda vermelha clara */
+    border-radius: 5px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    max-width: 400px; /* Largura máxima */
+    text-align: center; /* Centraliza o texto */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Animações suaves */
+.card, .btn, .nav-link {
+    transition: all 0.3s ease;
+}
+
+/* Melhorias de acessibilidade */
+.btn:focus, .nav-link:focus {
+    outline: 2px solid #69110c;
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+.favorite-nav-item {
+    position: relative;
+}
+
+.cart-nav-item {
+    position: relative;
+}
+
+.favorites-badge {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    background: #e60000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 1;
+    padding: 2px 6px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 1;
+    padding: 2px 6px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.favoritos.is-favorite,
+.favoritos[aria-pressed="true"] {
+    color: #e60000 !important;
+}
+
+.favorites-page {
+    min-height: 60vh;
+}
+
+.favorites-empty {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.favorites-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.favorite-card {
+    position: relative;
+    border: 1px solid #f1f1f1;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.favorite-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.favorite-card__button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    background: rgba(255,255,255,0.85);
+    border-radius: 999px;
+    padding: 6px;
+}
+
+.favorite-card__link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.favorite-card__link img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.favorite-card__body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.favorite-card__body h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.favorite-card__price {
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+}
+
+.favorite-card__description {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}

@@ -1,0 +1,96 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hecate - Roupas Alternativas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome para o ícone -->
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hecate - Roupas Alternativas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="carrinho.css">
+</head>
+<body>
+    <!-- Top Fixed Bar -->
+    <div class="fixed-top-bar">
+        <div class="left-side">
+            <span>FRETE GRÁTIS APARTIR DE R$150</span>
+        </div>
+        <div class="right-side">
+            <span>ONDE ENCONTRAR</span>
+            <span>RASTREAR PEDIDO</span>
+            <span>CONTATO</span>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/hecatealternativa/profilecard/?igsh=MXB0dmV3bGN5NDlhag=="><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="https://www.google.com.br/?hl=pt-BR">
+            <img src="./img/logocarrinho.png" width="80" alt="Logo Hecate">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i> pesquisar</a>
+                </li>
+                 <li class="nav-item">
+         <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../carrinho/carrinho.html"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/beatr/OneDrive/Área%20de%20Trabalho/hecate/login.htm"><i class="fas fa-user"></i> Entrar/Cadastre-se</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Secondary Navbar -->
+    <nav class="navbar secondary-nav navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse justify-content-center" id="secondaryNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Todos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Femininos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Masculino</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Plus Size</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Calçados</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Acessórios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Reposições</a></li>
+            </ul>
+        </div>
+    </nav>
+  <div id="conteudoCarrinho"></div>
+
+  <div id="barraFixa">
+    <div class="selecao">
+      <input type="checkbox" id="selecionarTudo" onclick="selecionarTodosItens()">
+      <label for="selecionarTudo"><strong>Selecionar tudo</strong></label>
+      <button onclick="excluirSelecionados()">Excluir</button>
+    </div>
+    <div class="resumo">
+      <p>Total (<span id="quantidadeItens">0</span> Itens): R$ <span id="totalBarra">0,00</span></p>
+      <button onclick="finalizarCompra()">Continuar</button>
+    </div>
+  </div>
+
+  <script src="carrinho.js"></script>
+</body>
+</html>

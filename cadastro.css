@@ -1,0 +1,314 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    margin-top: 0; /* Removido margin-top, usando padding */
+    padding-top: 30px; 
+}
+
+/* --- NAVBAR START --- */
+.navbar {
+    position: relative; /* Base para o logo */
+    min-height: 80px; /* Altura mínima para centralizar a logo */
+    margin-top: 30px;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1032;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand .logo {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.secondary-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px; /* Empurra a navegação para baixo, criando espaço para o logo */
+}
+/* --- NAVBAR END --- */
+
+/* Itens da Navbar */
+.navbar-nav {
+    margin-top: 20px;
+}
+.navbar-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 8px;
+}
+
+/* Fix para o ícone de pesquisa na página de cadastro - mesma especificidade da home */
+.navbar .nav-link.search-toggle .search-toggle-icon,
+.navbar .search-toggle-icon,
+.navbar-nav .nav-link .search-toggle-icon,
+button.nav-link.search-toggle .search-toggle-icon,
+button.search-toggle .search-toggle-icon {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+}
+
+.navbar .twitter-search .search-field svg,
+.navbar .twitter-search .search-field .search {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+}
+
+.navbar-nav .nav-link {
+    padding: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Barra de navegação secundária */
+.secondary-nav .nav-link {
+    color: #363636 !important;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Barra do topo */
+.fixed-top-bar {
+    background-color: #69110c;
+    color: white;
+    padding: 3px 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fixed-top-bar .left-side,
+.fixed-top-bar .right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.fixed-top-bar .social-icons {
+    display: flex;
+    gap: 10px;
+}
+.fixed-top-bar .social-icons a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.form-container {
+    text-align: center;
+    width: 100%; /* Ajuste para a largura total */
+    max-width: 590px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #8B0000;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px; /* Ajusta a margem entre os inputs */
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #8B0000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #A52A2A;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.options label {
+    font-size: 12px;
+    color: #333;
+}
+
+.options a {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para o Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px; 
+    margin-top: 100px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 5px; 
+}
+
+.footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+}
+
+.payment-icons {
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    margin-right: 10px;
+    width: 24px;
+}
+
+.subscribe-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px; 
+    margin-right: 0; 
+}
+
+.subscribe-section input[type="email"],
+.subscribe-section input[type="text"],
+.subscribe-section button {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.subscribe-section button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.message-container {
+    display: none !important;
+    position: absolute; /* Torna a mensagem flutuante */
+    top:24%; /* Ajusta a altura relativa */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+    background-color: #f8d7da; /* Cor de fundo vermelha clara */
+    color: #721c24; /* Cor do texto vermelha escura */
+    padding: 15px; /* Espaçamento interno */
+    border: 1px solid #f5c6cb; /* Borda vermelha clara */
+    border-radius: 5px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    max-width: 400px; /* Largura máxima */
+    text-align: center; /* Centraliza o texto */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+
+   
+   
+   
+   
+   
+
+

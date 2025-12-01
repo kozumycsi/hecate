@@ -1,0 +1,359 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 120px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.col-md-8 .card + .card {
+    margin-top: 15px;
+}
+
+.card-header {
+    background-color: #69110c;
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 15px 20px;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Resumo dos Produtos */
+.produto-resumo {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.produto-resumo:last-child {
+    border-bottom: none;
+}
+
+.produto-resumo img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.produto-info {
+    flex: 1;
+}
+
+.produto-info h6 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.produto-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.produto-preco {
+    font-weight: bold;
+    color: #69110c;
+}
+
+/* Cupom de Desconto */
+.cupom-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.cupom-section h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #69110c;
+}
+
+#cupom-mensagem {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.cupom-sucesso {
+    color: #28a745;
+}
+
+.cupom-erro {
+    color: #dc3545;
+}
+
+/* Formulários */
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #69110c;
+    box-shadow: 0 0 0 0.2rem rgba(105, 17, 12, 0.25);
+}
+
+.form-control[readonly] {
+    background-color: #f8f9fa;
+    color: #666;
+}
+
+/* Forma de Pagamento */
+.form-check {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form-check:hover {
+    border-color: #69110c;
+    background-color: #f8f9fa;
+}
+
+.form-check-input:checked + .form-check-label {
+    color: #69110c;
+    font-weight: bold;
+}
+
+.form-check-input:checked ~ .form-check {
+    border-color: #69110c;
+    background-color: #f8f9fa;
+}
+
+/* Resumo do Pedido */
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.resumo-item.total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #69110c;
+    border-top: 2px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #69110c;
+    border-color: #69110c;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4a0c08;
+    border-color: #4a0c08;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-outline-secondary {
+    border-color: #69110c;
+    color: #69110c;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #69110c;
+    border-color: #69110c;
+}
+
+/* Campos do Cartão */
+#campos-cartao {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+/* Feedback visual para CEP */
+#cep.loading {
+    border-color: #007bff !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+#cep.success {
+    border-color: #28a745 !important;
+    background-color: #f8fff9;
+}
+
+#cep.error {
+    border-color: #dc3545 !important;
+    background-color: #fff8f8;
+}
+
+/* Botão de busca CEP */
+.input-group .btn-outline-secondary {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group .form-control {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group .form-control:focus {
+    border-right: none;
+}
+
+/* Mensagem de status do CEP */
+.cep-status {
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: none;
+}
+
+.cep-status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.cep-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.cep-status.loading {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    display: block;
+}
+
+/* Botão de limpar campos */
+.btn-outline-info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+    margin-top: 10px;
+}
+
+.btn-outline-info:hover {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+
+.btn-outline-info:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 100px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .produto-resumo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .produto-resumo img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .resumo-item {
+        font-size: 12px;
+    }
+    
+    .resumo-item.total {
+        font-size: 16px;
+    }
+}
+
+/* Animações */
+.card {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #69110c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
