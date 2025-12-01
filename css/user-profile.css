@@ -1,0 +1,328 @@
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    color: #363636;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+    padding: 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+    padding: 8px 16px;
+    color: #363636;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #69110c;
+}
+
+.dropdown-divider {
+    margin: 8px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+
+.nav-link i.fa-user {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #363636;
+}
+
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+/* Estilos responsivos para o perfil do usuário */
+.user-profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.user-profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.user-profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.user-profile-button:hover .user-profile-image {
+    border-color: #69110c;
+}
+
+.user-profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    min-width: 200px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    border: 1px solid #e1e5e9;
+}
+
+.user-profile-container:hover .user-profile-dropdown,
+.user-profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-profile-header {
+    padding: 15px;
+    border-bottom: 1px solid #e1e5e9;
+    text-align: center;
+    background: linear-gradient(135deg, #69110c 0%, #8b1510 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.user-profile-header-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.3);
+    margin-bottom: 10px;
+}
+
+.user-profile-header-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.user-profile-header-email {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.user-profile-menu {
+    padding: 10px 0;
+}
+
+.user-profile-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.user-profile-menu-item:hover {
+    background: #f8f9fa;
+    color: #69110c;
+    text-decoration: none;
+}
+
+.user-profile-menu-item:active {
+    background: #e9ecef;
+}
+
+.user-profile-menu-item i {
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+    color: #666;
+}
+
+.user-profile-menu-item:hover i {
+    color: #69110c;
+}
+
+.user-profile-divider {
+    height: 1px;
+    background: #e1e5e9;
+    margin: 5px 0;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-profile-dropdown.show {
+    animation: fadeInDown 0.3s ease;
+}
+
+/* Estados de loading */
+.user-profile-button.loading {
+    pointer-events: none;
+}
+
+.user-profile-button.loading .user-profile-image {
+    opacity: 0.7;
+}
+
+.user-profile-button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid #69110c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Melhorias de acessibilidade */
+.user-profile-button:focus {
+    outline: 2px solid #69110c;
+    outline-offset: 2px;
+}
+
+.user-profile-menu-item:focus {
+    outline: 2px solid #69110c;
+    outline-offset: -2px;
+}
+
+/* Suporte para modo escuro do sistema */
+@media (prefers-color-scheme: dark) {
+    .user-profile-dropdown {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .user-profile-menu-item {
+        color: #e2e8f0;
+    }
+    
+    .user-profile-menu-item:hover {
+        background: #4a5568;
+        color: #f7fafc;
+    }
+    
+    .user-profile-menu-item:active {
+        background: #718096;
+    }
+    
+    .user-profile-menu-item i {
+        color: #a0aec0;
+    }
+    
+    .user-profile-menu-item:hover i {
+        color: #f7fafc;
+    }
+    
+    .user-profile-divider {
+        background: #4a5568;
+    }
+}
+
+/* Melhorias para dispositivos com tela de alta densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .user-profile-image,
+    .user-profile-header-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Estados especiais */
+.user-profile-button.has-notifications::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #dc3545;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-profile-button.is-online::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #28a745;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Transições suaves */
+.user-profile-container * {
+    transition: all 0.3s ease;
+} 
